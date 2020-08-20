@@ -1,12 +1,4 @@
-Description: Simple visual tests;
-
-Scenario: Open google search main page
-Given I am on a page with the URL 'https://www.example.com/'
-
-Scenario: Visual test of a page
-When I compare against baseline with `page`
-
-Scenario: Visual test of context element
-Given I am on a page with the URL 'https://github.com/vividus-framework'
-When I change context to an element by By.xpath(//img[@itemprop])
-When I compare against baseline with `vividus-logo`
+Scenario: Authorization
+Given I am on a page with the URL 'https://www.imdb.com/ '
+When I click on element located `By.xpath(//a[div[text()="Sign In"]])`
+Then the page with the URL 'https://www.imdb.com/registration/signin?ref=nv_generic_lgin&u=%2F' is loaded
