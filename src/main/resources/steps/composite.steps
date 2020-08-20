@@ -1,0 +1,2 @@
+Scenario: Authorization
+Given I am on a page with the URL 'https://www.imdb.com/ '
