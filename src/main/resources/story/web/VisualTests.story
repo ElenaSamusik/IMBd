@@ -21,11 +21,21 @@ Then the page with the URL 'https://www.imdb.com/title/tt0776766/?ref_=fn_al_tt_
 
 Scenario: Add to Watchlist
 Given I am on a page with the URL 'https://www.imdb.com/title/tt0776766/?ref_=fn_al_tt_2'
-When I click on element located `By.xpath(//button[contains(@class,"ipc-button uc-add-wl-button-icon--add")])`
-Then element located '//button[contains(@class,"ipc-button uc-add-wl-button-icon--add")]' disappears in '3'
+When I click on element located `By.xpath(//button[contains(@class,"ipc-button uc-add")])`
+When I wait until element located `By.xpath(//button[contains(@class,"ipc-button uc-add")])` disappears
+Then number of invisible elements `By.xpath(//button[contains(@class,"ipc-button uc-add")])` is EQUAL_TO `1`
 
 
+Scenario: Navigate to Your WatchList
+Given I am on a page with the URL 'https://www.imdb.com/?ref_=nv_home'
+When I click on element located `By.xpath(//span[@class ="imdb-header__account-toggle--logged-in imdb-header__accountmenu-toggle navbar__user-name navbar__user-menu-toggle__name navbar__user-menu-toggle--desktop"])`
+When I click on element located `By.xpath(//a[@class="ipc-list__item" and @role="menuitem"]/span[text()="Your watchlist"])`
+Then the page with the URL containing 'https://www.imdb.com/user/ur123192556/watchlist' is loaded
 
+Scenario: Sort list from Your Watchlist 
+Given I am on a page with the URL 'https://www.imdb.com/user/ur123192556/watchlist?ref_=nv_usr_wl'
+When I select `Runtime` from drop down located `By.cssSelector(#lister-sort-by-options)`
+When I click on element located `By.xpath(//div[@class="export"]/a[text()="Export this list"])`
 
 
 
