@@ -37,7 +37,7 @@ When I issue a HTTP GET request for a resource with the URL 'https://www.imdb.co
 Then the response code is equal to '200`
 
 
-When 
+
 
 
 
