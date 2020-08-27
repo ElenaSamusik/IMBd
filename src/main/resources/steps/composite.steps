@@ -1,1 +1,8 @@
 Composite: When I fill $Email, $Password in the registration form
+When I enter `<Email>` in field located `By.xpath(//*[@id="ap_email"])`
+When I enter `<Password>` in field located `By.xpath(//*[@id="ap_password"])`
+
+
+
+
+
