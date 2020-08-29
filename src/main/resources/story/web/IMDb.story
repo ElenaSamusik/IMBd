@@ -45,4 +45,3 @@ Then the response code is equal to '200`
 
 
 
-
